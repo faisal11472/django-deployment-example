@@ -1,0 +1,27 @@
+{% extends "login/base.html" %}
+{% load static %}
+{% block body_block %}
+
+<div class="jumbotron">
+  {% if registered %}
+  <h1>Thank You For Registration</h1>
+  {% else %}
+  <h1>Please ragister Here</h1>
+  <form  method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{user_form.as_p}}
+    {{profileform.as_p}}
+    <input type="submit" name="" value="Ragister">
+  </form>
+
+  {% endif %}
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}
